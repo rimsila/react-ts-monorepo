@@ -1,28 +1,20 @@
-const fs = require('fs')
-const path = require('path')
-const webpack = require('webpack')
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
-const appDirectory = fs.realpathSync(process.cwd())
-const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath)
+module.exports = (config) => {
+    // Remove the ModuleScopePlugin which throws when we try to import something
+    // outside of src/.
+    config.resolve.plugins.pop();
 
-// our packages that will now be included in the CRA build step
-const appIncludes = [resolveApp('src'), resolveApp('../components/src')]
+    // Resolve the path aliases.
+    config.resolve.plugins.push(new TsconfigPathsPlugin());
 
-module.exports = function override(config, env) {
-    // allow importing from outside of src folder
-    config.resolve.plugins = config.resolve.plugins.filter(
-        (plugin) => plugin.constructor.name !== 'ModuleScopePlugin',
-    )
+    // Let Babel compile outside of src/.
+    const oneOfRule = config.module.rules.find((rule) => rule.oneOf);
+    const tsRule = oneOfRule.oneOf.find((rule) =>
+        rule.test.toString().includes("ts|tsx")
+    );
+    tsRule.include = undefined;
+    tsRule.exclude = /node_modules/;
 
-    config.module.rules[0].include = appIncludes
-    config.module.rules[1].oneOf[2].include = appIncludes
-    config.module.rules[1].oneOf[2].options.plugins.push(
-        require.resolve('babel-plugin-react-native-web'),
-    )
-
-    config.plugins.push(
-        new webpack.DefinePlugin({ __DEV__: env !== 'production' }),
-    )
-
-    return config
-}
+    return config;
+};

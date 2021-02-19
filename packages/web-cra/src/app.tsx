@@ -20,7 +20,7 @@ export const App = () => {
         style={{ backgroundColor: 'red', width: 100 }}
         onClick={increaseCount}
       >
-        +
+        ++
       </button>
     </div>
   )

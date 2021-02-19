@@ -28,7 +28,7 @@ export function App() {
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>
-                this code is sharing with each other
+                this code is sharing with each other+
               </Text>
               <Text style={{ marginTop: 20 }} />
               <Button onPress={increaseCount} title="+" />

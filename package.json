@@ -15,7 +15,7 @@
         "studio": "yarn workspace mobile studio",
         "test": "yarn workspaces run test",
         "xcode": "yarn workspace mobile xcode",
-        "web-rn-cra": "lerna --scope='web-rn-cra' start --stream -- ",
+        "web-rn-cra": "yarn workspace web-rn-cra start",
         "web-cra": "yarn workspace web-cra start",
         "web-next": "yarn workspace web-nextjs dev"
     },
