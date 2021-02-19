@@ -34,12 +34,3 @@ Prettier and ESLint are also configured as pre-commit hooks.
       - `yarn studio`
       - Press the Run button
 
-## Who is using this on production
-
-Check out [DevHub](https://github.com/devhubapp/devhub), which is the project that inspired this repository.
-
-### Author
-
-Follow me on Twitter: [@brunolemos](https://twitter.com/brunolemos)<br/>
-
-<a href="https://twitter.com/brunolemos" target="_blank"><img src="https://github.com/brunolemos.png?size=500" height="100" /></a>
