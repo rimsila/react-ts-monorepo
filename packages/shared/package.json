@@ -1,0 +1,17 @@
+{
+  "name": "shared",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "jest --passWithNoTests"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-native": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "dependencies": {
+    "share-state": "0.0.1"
+  }
+}

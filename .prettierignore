@@ -9,3 +9,4 @@ node_modules
 packages/mobile/android
 packages/mobile/ios
 next.config.js
+.eslintrc.js

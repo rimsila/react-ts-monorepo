@@ -8,10 +8,10 @@ import {
   Text,
   View,
 } from 'react-native'
-import useCouter from 'share-state/src/useCouter'
+import { useCounterStore } from 'shared/share-state/useCounter'
 
 export function App() {
-  const { count, increaseCount } = useCouter()
+  const { counter, insCounter } = useCounterStore()
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -31,8 +31,8 @@ export function App() {
                 this code is sharing with each other+
               </Text>
               <Text style={{ marginTop: 20 }} />
-              <Button onPress={increaseCount} title="+" />
-              <Text style={styles.sectionTitle}>count+ {count}</Text>
+              <Button onPress={insCounter as any} title="+" />
+              <Text style={styles.sectionTitle}>count+ {counter}</Text>
             </View>
           </View>
         </ScrollView>
