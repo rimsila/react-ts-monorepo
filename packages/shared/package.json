@@ -12,6 +12,6 @@
     "react-native": "*"
   },
   "dependencies": {
-    "share-state": "0.0.1"
+    "shared": "0.0.1"
   }
 }

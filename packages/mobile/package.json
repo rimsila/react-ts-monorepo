@@ -14,8 +14,6 @@
   },
   "dependencies": {
     "components": "0.0.1",
-    "share-state": "0.0.1",
-    "shared": "0.0.1",
     "react": "17.0.1",
     "react-native": "0.63.3"
   },

@@ -1,8 +1,17 @@
 import { AppRegistry } from 'react-native'
 
 import { App } from 'components/src/App'
+import React from 'react'
+import { RootContextProvider } from 'shared/share-state'
+function AppRoot() {
+  return (
+    <RootContextProvider>
+      <App />
+    </RootContextProvider>
+  )
+}
 
-AppRegistry.registerComponent('myprojectname', () => App)
+AppRegistry.registerComponent('myprojectname', () => AppRoot)
 AppRegistry.runApplication('myprojectname', {
   rootTag: document.getElementById('root'),
 })

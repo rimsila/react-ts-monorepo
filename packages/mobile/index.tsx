@@ -1,7 +1,7 @@
 import { AppRegistry } from 'react-native'
 import React from 'react'
 import { RootContextProvider } from 'shared/share-state'
-import { App } from 'components/src/App'
+import { App } from 'shared/components/App'
 import { name as appName } from './app.json'
 
 function AppRoot() {
