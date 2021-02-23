@@ -1,28 +1,26 @@
-/* eslint-disable react-native/no-inline-styles */
-import { App as ComApp } from 'components/src/App'
-import useCounter from 'share-state/src/useCouter'
 import React from 'react'
+import { useCounterStore } from 'shared/share-state/useCounter'
+import { RootContextProvider } from 'shared/share-state'
 
-const App = () => {
-  const { count, increaseCount, decreaseCount } = useCounter()
-  console.log('count', count)
+const Root = () => {
+  const { counter, desCounter, insCounter } = useCounterStore()
 
   return (
     <>
-      <ComApp />
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={{ margin: '80px auto', width: 400 }}>
+        {/* <h1>Web app Cra</h1> */}
         <button
           type="button"
-          style={{ backgroundColor: 'orange' }}
-          onClick={decreaseCount}
+          style={{ backgroundColor: 'orange', width: 100 }}
+          onClick={desCounter}
         >
           -
         </button>
-        <span style={{ padding: '0 10px' }}> {count}</span>
+        <span style={{ padding: '0 10px' }}> {counter}</span>
         <button
           type="button"
-          style={{ backgroundColor: 'red' }}
-          onClick={increaseCount}
+          style={{ backgroundColor: 'red', width: 100 }}
+          onClick={insCounter}
         >
           +
         </button>
@@ -30,4 +28,15 @@ const App = () => {
     </>
   )
 }
+
+const App = () => {
+  return (
+    <>
+      <RootContextProvider>
+        <Root />
+      </RootContextProvider>
+    </>
+  )
+}
+
 export default App
