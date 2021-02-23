@@ -2,7 +2,7 @@ import React from 'react'
 import '@testing-library/jest-native/extend-expect'
 import { render, waitFor } from '@testing-library/react-native'
 
-import { App } from 'components/src/App'
+import { App } from 'shared/components/App'
 
 test('Renders the shared app', async () => {
   const { getByText } = render(<App />)
