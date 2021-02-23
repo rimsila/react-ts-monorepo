@@ -7,8 +7,7 @@
     "react-art": "17.0.1",
     "react-dom": "17.0.1",
     "react-native-web": "0.14.8",
-    "react-scripts": "4.0.0",
-    "components": "0.0.1"
+    "react-scripts": "4.0.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
