@@ -1,11 +1,11 @@
 /* eslint-disable no-param-reassign,@typescript-eslint/no-var-requires */
 
 //* new share here
-const withTM = require('next-transpile-modules')(['components', 'share-state'], {
+const withTM = require('next-transpile-modules')(['shared'], {
     resolveSymlinks: true,
 })
 
-module.exports = withTM({
+export default withTM({
     webpack(config) {
         config.resolve.alias = {
             ...(config.resolve.alias || {}),

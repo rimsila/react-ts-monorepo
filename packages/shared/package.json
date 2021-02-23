@@ -6,12 +6,7 @@
     "test": "jest --passWithNoTests"
   },
   "peerDependencies": {
-    "@types/react": "*",
-    "@types/react-native": "*",
     "react": "*",
     "react-native": "*"
-  },
-  "dependencies": {
-    "shared": "0.0.1"
   }
 }
